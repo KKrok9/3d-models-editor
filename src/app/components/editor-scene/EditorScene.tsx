@@ -4,6 +4,7 @@ import styles from './EditorScene.module.scss';
 import { Canvas } from "@react-three/fiber"
 import { Suspense } from 'react';
 import Sztacheta from '@/app/3d-models/przeslo/Sztacheta';
+import Przeslo from '@/app/3d-models/przeslo/Przeslo';
 const EditorScene = () => {
 
 
@@ -14,7 +15,8 @@ const EditorScene = () => {
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[5, 5, 5]} intensity={1} castShadow shadow-mapSize={1024} />
                 <Suspense fallback={null}>
-                    <Sztacheta width={2} height={5} thickness={0.2} position={[0, 0, 0]} boardStyle={'flat'} color={''} materialType={'wood'} />
+                    <Przeslo width={2} height={2} boardCount={8} boardStyle={'flat'} frameStyle={''} boardThickness={0.05} boardColor={''} frameColor={''} boardMaterial={'wood'} frameMaterial={'wood'} hasTopDecoration={false}>
+                    </Przeslo>
                     <Environment preset="park" />
                 </Suspense>
                 <OrbitControls makeDefault />

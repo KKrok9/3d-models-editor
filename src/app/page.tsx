@@ -6,12 +6,7 @@ import SidePanel from "./components/side-panel/SidePanel";
 export default function Home() {
     return (
         <div className={styles.page}>
-            <div className={styles.left_side}>
-                <EditorScene />
-            </div>
-            <div className={styles.right_side}>
-                <SidePanel />
-            </div>
+            <EditorScene />
         </div>
     );
 }

@@ -1,5 +1,7 @@
 import * as THREE from "three";
 import { useMemo } from "react";
+import WoodMaterial from "../materials/WoodMaterial";
+import MetalMaterial from "../materials/MetalMaterial";
 
 interface SztachetaProps {
     width: number;
@@ -26,39 +28,8 @@ const Sztacheta: React.FC<SztachetaProps> = ({
         shape.moveTo(-width / 2, -height / 2);
         shape.lineTo(width / 2, -height / 2);
 
-        switch (boardStyle) {
-            case "pointed":
-                shape.lineTo(width / 2, height / 2 - width / 2);
-                shape.lineTo(0, height / 2);
-                shape.lineTo(-width / 2, height / 2 - width / 2);
-                break;
-            case "rounded":
-                shape.lineTo(width / 2, height / 2 - width / 2);
-                const curve = new THREE.EllipseCurve(
-                    0,
-                    height / 2 - width / 2,
-                    width / 2,
-                    width / 2,
-                    0,
-                    Math.PI,
-                    false
-                );
-                curve.getPoints(10).forEach((point) => {
-                    shape.lineTo(point.x, point.y);
-                });
-                shape.lineTo(-width / 2, height / 2 - width / 2);
-                break;
-            case "decorative":
-                shape.lineTo(width / 2, height / 2 - width);
-                shape.lineTo(width / 4, height / 2 - width / 2);
-                shape.lineTo(0, height / 2);
-                shape.lineTo(-width / 4, height / 2 - width / 2);
-                shape.lineTo(-width / 2, height / 2 - width);
-                break;
-            default:
-                shape.lineTo(width / 2, height / 2);
-                shape.lineTo(-width / 2, height / 2);
-        }
+        shape.lineTo(width / 2, height / 2);
+        shape.lineTo(-width / 2, height / 2);
 
         shape.lineTo(-width / 2, -height / 2);
         return shape;
@@ -76,6 +47,7 @@ const Sztacheta: React.FC<SztachetaProps> = ({
         <group position={position}>
             <mesh castShadow receiveShadow>
                 <extrudeGeometry args={[boardShape, extrudeSettings]} />
+                {materialType === "wood" ? <WoodMaterial color={color} /> : <MetalMaterial color={color} />}
             </mesh>
         </group>
     );
