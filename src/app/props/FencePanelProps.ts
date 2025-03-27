@@ -1,4 +1,3 @@
-import * as THREE from "three";
 export type FencePanelProps = {
     width: number;
     height: number;

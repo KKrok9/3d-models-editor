@@ -1,4 +1,3 @@
-import { GLTFExporter } from "three/examples/jsm/Addons.js";
 import styles from "./SidePanel.module.scss";
 import { FencePanelProps } from "@/app/props/FencePanelProps";
 interface SidePanelProps {
