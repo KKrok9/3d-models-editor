@@ -23,7 +23,6 @@ const EditorScene = () => {
         boardMaterial: "wood",
         frameMaterial: "wood",
         displayTopFramePart: false,
-        ref: sceneRef
     });
 
     const exportGLB = () => {

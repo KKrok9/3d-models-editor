@@ -1,3 +1,4 @@
+import * as THREE from "three";
 export type FencePanelProps = {
     width: number;
     height: number;
@@ -10,5 +11,4 @@ export type FencePanelProps = {
     boardMaterial: "wood" | "metal";
     frameMaterial: "wood" | "metal";
     displayTopFramePart: boolean;
-    ref: any;
 };

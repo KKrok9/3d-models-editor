@@ -7,7 +7,7 @@ interface WoodMaterialProps {
     woodType?: string;
 }
 
-const WoodMaterial: React.FC<WoodMaterialProps> = ({ color, roughness = 0.8, woodType = "pine" }) => {
+const WoodMaterial: React.FC<WoodMaterialProps> = ({ color, roughness = 0.8 }) => {
     const woodColor = new THREE.Color(color);
     return <meshStandardMaterial color={woodColor} roughness={roughness} metalness={0.1} />;
 }

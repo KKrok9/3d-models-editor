@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import WoodMaterial from '../materials/WoodMaterial';
 import MetalMaterial from '../materials/MetalMaterial';
 

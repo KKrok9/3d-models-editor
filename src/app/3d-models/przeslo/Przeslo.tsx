@@ -1,6 +1,5 @@
 "use client";
-import * as THREE from "three";
-import React, { useRef } from "react";
+import React from "react";
 import Sztacheta from "./Sztacheta";
 import RamaPrzesla from "./RamaPrzesla";
 import { FencePanelProps } from "@/app/props/FencePanelProps";
@@ -17,7 +16,6 @@ const FencePanel: React.FC<FencePanelProps> = ({
     boardMaterial,
     frameMaterial,
     displayTopFramePart,
-    ref
 }) => {
 
     const frameThickness = boardThickness * 1.5;
@@ -49,7 +47,7 @@ const FencePanel: React.FC<FencePanelProps> = ({
     };
 
     return (
-        <group ref={ref}>
+        <group>
             <RamaPrzesla
                 color={frameColor}
                 width={width}
