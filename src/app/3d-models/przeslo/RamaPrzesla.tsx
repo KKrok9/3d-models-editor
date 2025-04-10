@@ -31,15 +31,12 @@ const RamaPrzesla: React.FC<RamaPrzeslaProps> = ({ width, height, thickness, col
 
     return (
         <group>
-            {/* Rama pozioma - dolna */}
             {createFramePart(width, frameThickness, frameThickness, 0, -height / 2 + frameThickness / 2, 0)}
 
             {displayTopFramePart && createFramePart(width, frameThickness, frameThickness, 0, height / 2 - frameThickness / 2, 0)}
 
-            {/* Rama pionowa - lewa */}
             {createFramePart(frameThickness, height, frameThickness, -width / 2 + frameThickness / 2, 0, 0)}
 
-            {/* Rama pionowa - prawa */}
             {createFramePart(frameThickness, height, frameThickness, width / 2 - frameThickness / 2, 0, 0)}
         </group>
     );
